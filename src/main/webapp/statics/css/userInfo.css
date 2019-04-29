@@ -1,0 +1,33 @@
+*{margin: 0;padding: 0;}
+			/*top头部div*/
+			.top{height: 100px;background-color: #D1EEEE;}
+			
+			
+			
+			.info{margin: 0 auto;width: 1000px; font-family: "楷体";}
+			.user{width: 300px;background-color: #CCCC99;height: 600px;float: left;}
+			.messageRight{width: 700px;background-color: #B0C4DE;height: 600px;float: right;}
+			.user table{margin: 15px;width: 90%;font-size: 18px;}
+			.user table tr{line-height: 40px;}
+			a{text-decoration: none;}
+			
+			.user  img{border-radius:50% ;border:2px #FF9933 solid ;}
+			
+			/*信息div*/
+			#page{width: 95%;margin: 0 auto;}
+			.unreadMessage,.yesMessage{width: 98%;background-color: #99CCCC;margin: 0 auto;height: 500PX;overflow-y:auto;}
+			.yesMessage{display: none;}
+			/*.yesMessage{display: block;}*/
+			.userMessage{height: 40px;background-color: coral;margin-bottom: 5px;}
+			.userMessage p a{line-height: 40px;}
+			.userMessage p a img{width: 25px;height: 25px;border-radius:50% ;vertical-align:middle;}
+			#page p input{font-size: 20px; padding: 10px 20px 10px 20px;border: none;outline-style: none;font-family: "楷体";margin: 10px 15px 10px 15px;}
+			.userMessage p a span{margin-left: 50px;}
+		
+		/**/
+		.tim{padding: 3px;border-radius:50% ;float: left;background-color: white;display: inline-block;padding: 5px;font-size: 8px;border: 1px #FF3333 solid;
+		color: red;}
+		
+		/*发布房源信息*/
+		.fabu{padding: 5px 20px  5px 20px;color:#B22222 ;}
+		.fabu:hover{background-color: #C0C0C0;color: white;}

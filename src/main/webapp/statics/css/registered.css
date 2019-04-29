@@ -1,0 +1,17 @@
+*{margin: 0;padding: 0;}
+			html{  background:-webkit-linear-gradient(white,lightblue,skyblue);height: 100%;}
+			
+			.container{margin: 0 auto;width: 1000px;height: 550px;margin-top: 50px;}
+			
+			 input[type='text']{line-height: 30px;border: none;font-size: 16px;}
+			 table{width: 400px;font-family: cursive;margin: 0 auto;font-size: 20px;}
+			 table tr{height: 40px;}
+			 table tr:last-child{text-align: center;}
+			 table tr:last-child input{font-size: 20px;padding: 5px 20px 5px 20px;margin: 0px 15px 0px 15px ;font-family:cursive;color: whitesmoke;border: none;background-color: #FF6633;}
+			
+		
+		/*userRegisterVIP房主注册*/
+		.userRegisterVIP{display: none;}
+		
+		/*注册切换*/
+		.qiehuan{font-size: 18px;font-family: "楷体";padding: 5px 15px  5px 15px;background-color: #99CCCC;margin-left: 200px;}
