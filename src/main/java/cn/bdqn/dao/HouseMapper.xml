@@ -7,4 +7,8 @@
         <select id="getHoseById" resultType="house" parameterType="String">
                 select  * from house where hid=#{id}
         </select>
+        <!--查看所有的房子-->
+        <select id="getHouse" resultType="house">
+                SELECT * FROM `house`
+        </select>
 </mapper>

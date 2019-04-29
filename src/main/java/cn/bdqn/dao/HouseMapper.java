@@ -28,6 +28,6 @@ public interface HouseMapper {
     //(根据房主id查找房子信息集合)
     List<House> getHouseByHouseUser(int userId);
 
-    //(根据时间查找房子信息集合)
-    List<House> getHouseByHouseTime(String time);
+    //(查看所有的房子信息)
+    List<House> getHouse();
 }

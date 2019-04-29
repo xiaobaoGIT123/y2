@@ -42,4 +42,13 @@ public class HouseController {
         return "registered";
     }
 
+    /**
+     * 跳转到添加房源界面
+     */
+    @RequestMapping("/add.html")
+    public String addHouse(){
+
+        return "addHouse";
+    }
+
 }

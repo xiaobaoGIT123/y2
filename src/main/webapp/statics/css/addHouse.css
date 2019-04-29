@@ -3,11 +3,11 @@
 	padding: 0;
 }
 
-html{background-color: #388E8E;}
+
 /*全局div*/
 
 body {
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 
 #all {
@@ -16,7 +16,7 @@ body {
 	height: 800px;
 	margin: 0 auto;
 	text-align: center;
-	background: url(../img/one.jpg) no-repeat center center fixed;
+	background: url(/statics/img/l_img/one.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -29,7 +29,7 @@ body {
 #addHome {
 	margin: 0 auto;
 	margin-top: 20px;
-	width: 800px;
+	width: 900px;
 	height: 600px;
 	background-color: rgb(105,105,105,0.7);
 	border-radius: 10px;
@@ -50,14 +50,17 @@ legend {
 }
 
 #add1 {
-	margin: 0 auto;
+	margin: 0 auto;	
 	text-align: center;
 	border: 2px lightpink solid;
-	width: 80%;
+	width: 98%;
+	height: 200px;
 	font-size: 17px;
 	margin-bottom: 5px;
 	color: #B3EE3A;
 }
+
+
 
 #add1 input {
 	width: 200px;
@@ -65,8 +68,26 @@ legend {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+#add1 select{
+	width: 200px;
+	height: 30px;
+	text-align: center;
+}
+/*房源描述*/
 #add1 input:last-child{
-	width: 500px;
+	width: 495px;
+}
+
+
+/*房子标签div*/
+#homespan{
+	width: 275px;
+	height: 170px;
+	float: right;
+	background: #A9A9A9;
+	border-radius: 5px;
+	/*border: 1px blue solid;*/
+	margin-right: 5px;
 }
 
 #add2 {
@@ -109,7 +130,7 @@ legend {
 	text-align: center;
 	margin: 0 auto;
 	margin-right: 15px;
-	top: -420px;
+	top: -400px;
 	left: 490px;
 	display: inline-block;
 	

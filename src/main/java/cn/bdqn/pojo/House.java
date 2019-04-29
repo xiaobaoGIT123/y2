@@ -11,6 +11,34 @@ public class House {
     private String houseAddress;//地址
     private String housePrice;//价格
 
+    private String houseDescribe;//描述
+    private String houseTitle;//标题
+    private String houseArea;//面积
+
+    public String getHouseTitle() {
+        return houseTitle;
+    }
+
+    public void setHouseTitle(String houseTitle) {
+        this.houseTitle = houseTitle;
+    }
+
+    public String getHouseArea() {
+        return houseArea;
+    }
+
+    public void setHouseArea(String houseArea) {
+        this.houseArea = houseArea;
+    }
+
+    public String getHouseDescribe() {
+        return houseDescribe;
+    }
+
+    public void setHouseDescribe(String houseDescribe) {
+        this.houseDescribe = houseDescribe;
+    }
+
     private User user;   //拥有者对象
 
     public User getUser() {

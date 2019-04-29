@@ -1,0 +1,439 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/*全局div盒子*/
+#bigbox{
+	/*border: 1px red solid;*/
+	width: 1000px;
+	height: 1500px;
+	margin: 0 auto;
+	background-color: #E0FFFF;
+}
+/*头部*/
+header{
+	width: 100%;
+	height: 100px;
+	margin: 0 auto;
+    background:-webkit-linear-gradient(left, #66CD00 5%, #27408B 35%, #98FB98 70%, #DC143C 100%);
+    background:-moz-linear-gradient(left, #66CD00 5%, #27408B 35%, #98FB98 70%, #DC143C 100%);
+    background:-o-linear-gradient(left, #66CD00 5%, #27408B 35%, #98FB98 70%, #DC143C 100%);
+    background:linear-gradient(left, #66CD00 5%, #27408B 35%, #98FB98 70%, #DC143C 100%);
+
+}
+/*头部滚播图div*/
+#div1 {
+	/*border: 1px red solid;*/
+	/*width: 848px;
+	height: 90px;*/
+	width:  848px;
+	height: 100%;
+	/*margin: 100px auto;*/
+	position: relative;
+	overflow: hidden;
+}
+#div1 ul {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#div1 ul li {
+	float: left;
+	/*width: 178px;
+	height: 108px;*/
+	width: 200px;
+	height: 100%;
+	list-style: none;
+	margin-left: 10px;
+}
+
+/*滚播图*/
+#div1 ul li img{
+	width: 200px;
+	height: 100%;
+	vertical-align: middle;
+}
+
+/*用户名div*/
+#UserType{
+	background: #6CA6CD;
+	font-size: 16px;
+	text-align:center;
+	line-height: 50px;
+	float: left;
+	width: 150px;
+	height: 100px;
+	
+}
+/*发布房源*/
+#UserType a{
+	color: #6CA6CD;
+	font-size: 25px;
+	padding:5px 15px 5px 15px;
+	border: 1px wheat solid;
+	border-radius: 5px;
+	text-decoration: none;
+	background:-webkit-linear-gradient(left,#2F4F4F 55%,#708090 95%);
+	/*display: none;*/
+}
+/*用户登录展示div*/
+#UserType div{
+	width: 100%;
+	height: 50px;
+}
+/*用户头像*/
+#UserType div img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-top: 5px;
+}
+
+/*主体*/
+section{
+	/*border: 1px black solid;*/
+	width: 1000px;
+	height: 1100px;
+	margin: 0 auto;
+	margin-top: 50px;
+	/*background-color: forestgreen;*/
+}
+/*左边主体登录注册div*/
+#logindiv{
+	/*border: 1px black solid;*/
+	float: left;
+	top:160px;
+	width: 270px;
+	height: 1080px;
+	background:-webkit-linear-gradient(#283c86 0%,#CAE1FF 20%);
+}
+
+/*登录、注册 p标签*/
+#logindiv p{
+	border-bottom: 5px cadetblue solid;
+	height: 70px;
+	text-align: center;
+}
+
+/*登录注册按钮*/
+#logindiv p input{
+	height: 40px;
+	width: 90px;
+	margin: 15px;
+	border: none;
+	font-size: 18px;
+	border-radius: 5px;
+	text-align: center;
+}
+#logindiv p input:hover{
+	background: #76EEC6;
+	font-weight: bold;
+}
+/*登录表单div*/
+#Loginfrom{
+	/*border: 1px black solid;*/
+	margin: 0 auto;
+	width: 100%;
+	height: 270px;
+	float:left;
+	background-color: cornflowerblue;
+	display: none;
+	color: white;
+}
+/*登录表格*/
+#Loginfrom table{
+	margin: 0 auto;
+	margin-top: 15px;
+	font-size: 16px;
+}
+/*单选按钮*/
+#Loginfrom table tr:first-child input{
+	width: 25px;
+	height: 15px;
+	font-size: 25px;
+}
+/*登录表格行*/
+#Loginfrom table td{
+	/*border: 1px black solid;*/	
+	line-height: 40px;
+}
+/*密码框那行*/
+#Loginfrom table tr:nth-of-type(3) td{
+	padding-top: 10px;
+	line-height: 10px;
+}
+/*表单用户名框*/
+#Loginfrom table tr:nth-of-type(3) td input{
+	height: 20px;
+}
+/*表单密码框*/
+#Loginfrom table tr:nth-of-type(2) td input{
+	height: 20px;
+}
+/*第三方登录和找回密码*/
+#Loginfrom table tr:nth-of-type(3) a{
+	font-size: 13px;
+	color: whitesmoke;
+	line-height: 35px;
+	text-decoration: none;
+}
+#Loginfrom table tr:nth-of-type(3) a:hover{
+	color:#DC143C;
+	text-decoration: underline;
+}
+/*提示语句*/
+#Loginfrom table tr:nth-of-type(4) td{
+	font-size: 14px;
+	color:#FF4500;
+	height: 40px;
+}
+/*登录、退出按钮*/
+#Loginfrom table tr:last-child input{
+	width: 70px;
+	height: 30px;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	border: none;
+	background-color: #F0FFFF;
+	border-radius: 2px;
+}
+/*登录、退出按钮悬浮事件*/
+#Loginfrom table tr:last-child input:hover{
+	background: #8B8989;
+}
+/*最新资讯*/
+#newhomes{
+	width: 100%;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	color: #388E8E;
+	font-family: "arial narrow";
+	float: left;
+	background:-webkit-linear-gradient(#CDCDC1 10%,#F0FFF0 95%);
+}
+
+/*最新资讯滚动条*/
+#news {
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	/*border-bottom: 2px #8B8989 solid;*/
+	/*这里必须设置哦，否则滚动会消失的，如果设置为scroll，更容易明白原理*/
+}
+			
+#news li {
+	text-align: center;
+	line-height: 50px;
+}
+
+
+/*搜索、展示房源信息的div盒子*/
+#homeShow{
+	border: 2px black solid;
+	float: right;
+	width: 725px;
+	height: 1076px;
+	top: 160px;
+	right: 10px;
+}
+/*搜索div*/
+#findhome{
+	/*border: 1px orange solid;*/
+	/*margin: 0 auto;*/
+	width: 100%;
+	height: 100px;
+	/*margin-top: 5px;*/
+	background: #B3EE3A;
+}
+#findhome p {
+	/*width: 460px;*/
+	/*background: red;*/
+	text-align: center;
+}
+/*查询单选按钮*/
+#findhome p input{
+	width: 20px;
+	height: 20px;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+/*下拉框*/
+#s2{
+	display: none;
+}
+select{
+	width: 130px;
+	height: 40px;
+	float: left;
+	margin-top: 12px;
+	font-size: 16px;
+}
+
+/*查询输入框*/
+#findhome div input:nth-child(3){
+	width:458px;
+	height:46px;
+	font-size: 20px;
+	border: 0;
+	outline: none;
+	border-radius: 5px 0 0 5px;
+	margin-top: 10px;
+	margin-left:20px;
+	display: inline-block;
+	/*background: red;*/
+}
+/*查询按钮*/
+#finds {
+	border: none;
+	color: #FFFFFF;
+	text-decoration: none;
+	padding: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	font-size: 20px;
+	background: grey;
+	border-radius: 0 5px 5px 0;
+	float: right;
+	margin-right: 17px;
+	margin-top: 10px;
+}
+
+/*查询p标签*/
+#findhome p{
+	font-size: 20px;
+	margin-left: 95px;
+}
+
+
+/*查询按钮*/
+#findhome label input:last-child{
+	width:80px;
+	height:45px;
+	font-size: 20px;
+	border: 0;
+	outline: none;
+	border-radius: 5px;
+	margin-top: 3px;
+	margin-left: 5px;
+	position: absolute;
+	top: 194px;
+}
+#findhome label input:last-child:hover{
+	background: gray;
+}
+/*房源信息展示大框div*/
+#lookhome{
+	/*border: 2px red solid;*/
+	width: 725px;
+	height: 900px;
+	/*margin: 0 auto;*/
+	margin-top: 5px;
+	background: #A4D3EE;
+	overflow-x: auto;
+	/*overflow-y: hidden;*/
+}
+/*房源信息小框div*/
+.showhome{
+	width: 710px;
+	height: 120px;
+	background: #DBDBDB;
+	border-bottom: 5px #2F4F4F solid;
+}
+/*房源小框图片*/
+.showhome img{
+	width: 120px;
+	height: 120px;
+	float: left;
+}
+/*房源小框表格*/
+.showhome table{
+	float: right;
+	margin-top: 25px;
+	font-family: "微软雅黑";
+	font-size: 16px;	
+}
+.showhome table td{
+	line-height: 30px;
+	/*border: 1px solid;*/
+	width: 190px;
+}
+.showhome table tr:first-child td:last-child{
+	color: #DC143C;
+}
+
+
+/*房源详细信息*/
+.showhome table a{
+	width: 20px;
+	height: 30px;
+	color: #5E5E5E;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 0 0 0  40px;
+}
+.showhome table a:hover{
+	color: #191970;
+}
+/*切换页码div*/
+#pageBtn{
+	text-align: center;
+	line-height: 70px;
+	/*background: #9FB6CD;*/
+	position: absolute;
+	top: 1160px;
+	left: 650px;
+}
+#pageBtn li{
+	display: inline-block;
+	margin-right: 20px;
+	font-size: 20px;	
+}
+#pageBtn li a{
+	color: #0000FF;
+	/*text-decoration: none;*/
+}
+
+
+/*尾部*/
+footer{
+	/*border: 1px red solid;*/
+	width: 1000px;
+	height: 280px;
+	margin: 0 auto;
+	margin-top: 30px;
+	background:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0.2, #E0FFFF), color-stop(0.6, #DBDBDB), color-stop(0.95, #4A708B));
+	background:-webkit-linear-gradient(#E0FFFF 20%, #DBDBDB 60%, #4A708B 95%);
+	background:-moz-linear-gradient(#E0FFFF 20%, #DBDBDB 60%, #4A708B 95%);
+	background:-o-linear-gradient(#E0FFFF 20%, #DBDBDB 60%, #4A708B 95%);
+	background:linear-gradient(#E0FFFF 20%, #DBDBDB 60%, #4A708B 95%);
+}
+/*友情链接*/
+footer ul{
+	/*border: 1px red solid;*/
+	width: 100%;
+	height: 40px;
+	margin-left: 70px;
+	margin-top: 20px;
+}
+footer ul li{
+	list-style: none;
+	margin-right: 20px;
+	float:left;
+}
+footer ul li a{
+	font-size: 15px;
+	color: white;
+}footer ul li a:hover{
+	color: #DC143C;
+}
+#onediv h2{
+	color: gray;
+	margin-left: 70px;
+}
+#onediv p{
+	text-align: center;
+	font-size: 12px;
+} 
+

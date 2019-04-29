@@ -1,12 +1,13 @@
 package cn.bdqn.dao;
 
 import cn.bdqn.pojo.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
 
 
-    //(登陆)
-    User getUserByUsrNameAndRole(String userName,Integer role) ;
+    //根据用户和角色查找用户
+    User getUserByName(@Param("role") int role, @Param("userName") String userName);
 
     //(用户名验证)
     User getUserByUsrName(String userName) ;
