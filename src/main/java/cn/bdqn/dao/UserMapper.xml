@@ -9,9 +9,14 @@
     <select id="getUserByUid" resultType="User" parameterType="String">
         select  *from  user where uid =#{id}
     </select>
-    <!--根据角色和用户名查找用户(登录)-->
-    <select id="getUserByName" resultType="User" >
-        SELECT * FROM `user` WHERE role=#{role} AND userName=#{userName}
+
+
+    <select id="getUserByUsrName" resultType="user" parameterType="String">
+          SELECT * FROM `USER` WHERE userName = #{userName};
     </select>
 
+
+    <insert id="addUser" parameterType="User">
+        INSERT INTO `user` VALUES(NULL,#{userName},#{passWord},#{phone},#{role},0,0,'男',18,#{userCardId},#{headPicture},0);
+    </insert>
 </mapper>

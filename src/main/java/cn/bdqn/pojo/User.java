@@ -109,4 +109,23 @@ public class User {
     public void setReportCount(Integer reportCount) {
         this.reportCount = reportCount;
     }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                ", phone='" + phone + '\'' +
+                ", role=" + role +
+                ", accountStatus=" + accountStatus +
+                ", userStatus=" + userStatus +
+                ", sex='" + sex + '\'' +
+                ", age=" + age +
+                ", userCardId='" + userCardId + '\'' +
+                ", headPicture='" + headPicture + '\'' +
+                ", reportCount=" + reportCount +
+                '}';
+    }
 }

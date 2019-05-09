@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="fhouse" />
         <module name="FindHouse" />
+        <module name="y2" />
       </profile>
     </annotationProcessing>
   </component>

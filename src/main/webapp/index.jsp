@@ -4,7 +4,7 @@
 
 <h2>Hello World!</h2>
 
-<a href="/house/user.html">房子页面</a>
+<a href="/user/firstpage.html">房子页面</a>
 
 </body>
 </html>
