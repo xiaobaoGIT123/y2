@@ -18,16 +18,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserByName(int role, String userName, String passWord) {
-        User user= userMapper.getUserByName(role, userName);
-
-        if(user!=null){
-            if(passWord.equals(user.getPassWord())){
-                return user;
-            }
-        }
-
-        return null;
+    public User getUserByUsrName(String userName) {
+        return userMapper.getUserByUsrName(userName);
     }
 
+    @Override
+    public int addUser(User user) {
+        return userMapper.addUser(user);
+    }
 }

@@ -1,0 +1,61 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+html{
+	background:-webkit-linear-gradient(white,lightblue,aqua);height: 100%;
+	/*color: aqua;*/
+	
+}
+
+
+div:first-child{
+	width: 480px;
+	height: 180px;
+	/*border: 1px dashed red;*/
+	margin: 50px auto;
+	background: greenyellow;
+	border-radius: 50px;
+	
+}
+
+div:last-child{
+	width: 480px;
+	height: 180px;
+	/*border: 1px dashed red;*/
+	margin: 100px auto;
+	background: lightskyblue;
+	border-radius: 50px;
+	
+}
+
+div span[id="fSpan"]{
+	text-align: center;	
+	font-size: 35px;
+	line-height: 180px;
+	
+	}
+
+div span[id="sSpan"]{
+	text-align: center;	
+	font-size: 35px;
+	line-height: 180px;
+	
+}
+
+div a{
+	text-decoration: none;
+	
+}
+
+div:hover{
+	background-color: aquamarine;
+	color: white;
+	box-shadow: 10px 10px 10px darkturquoise;
+
+}
+ div a span:hover{
+ 	
+ }
