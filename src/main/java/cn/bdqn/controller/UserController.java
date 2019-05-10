@@ -9,12 +9,9 @@ import cn.bdqn.pojo.User;
 import cn.bdqn.service.UserService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-<<<<<<< HEAD
 import com.sun.org.apache.xpath.internal.operations.Bool;
-=======
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
->>>>>>> origin/master
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,19 +20,17 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-<<<<<<< HEAD
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-=======
 import javax.servlet.http.HttpSession;
+import javax.ws.rs.HEAD;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
->>>>>>> origin/master
 import java.util.List;
 import java.util.Random;
 
@@ -105,7 +100,6 @@ public class UserController {
                     Picture.transferTo(file);
 //                    Picture.transferTo(file2);
 
-<<<<<<< HEAD
         session.removeAttribute("number");
        List<House> houseList=houseService.getHouse();
 
@@ -172,7 +166,6 @@ public class UserController {
             return "redirect:/login.html";
         }
             return "redirect:/doLogin.html";
-=======
                 } catch (Exception e) {
                     e.printStackTrace();
                     session.setAttribute("uploadFileError", "上传失败");
@@ -314,6 +307,5 @@ logger.info(phone);
             e.printStackTrace(System.out);
         }
          return "";
->>>>>>> origin/master
     }
 }
