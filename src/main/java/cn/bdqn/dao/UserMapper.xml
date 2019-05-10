@@ -10,7 +10,7 @@
         select  *from  user where uid =#{id}
     </select>
     <!--根据角色和用户名查找用户(登录)-->
-    <select id="getUserByName" resultType="User" >
+    <select id="getUserByNameAndRole" resultType="User" >
         SELECT * FROM `user` WHERE role=#{role} AND userName=#{userName}
     </select>
 

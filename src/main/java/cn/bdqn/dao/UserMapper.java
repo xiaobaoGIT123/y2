@@ -7,7 +7,7 @@ public interface UserMapper {
 
 
     //根据用户和角色查找用户
-    User getUserByName(@Param("role") int role, @Param("userName") String userName);
+    User getUserByNameAndRole(@Param("role") int role, @Param("userName") String userName);
 
     //(用户名验证)
     User getUserByUsrName(String userName) ;

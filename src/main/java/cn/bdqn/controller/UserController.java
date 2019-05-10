@@ -1,5 +1,5 @@
 package cn.bdqn.controller;
-
+import org.apache.log4j.Logger;
 import cn.bdqn.coots.Conts;
 import cn.bdqn.pojo.House;
 import cn.bdqn.pojo.User;
@@ -28,7 +28,7 @@ public class UserController {
     HouseService houseService;
     @Resource
     UserService userService;
-
+    private static Logger logger = Logger.getLogger(HouseController.class);
 
     /**
      * 进入主界面
@@ -71,19 +71,17 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/doLogin.html",method = RequestMethod.POST)
-//    @ResponseBody
     public String doLogin(String userName, String passWord,
                           int role, HttpSession session,
                           HttpServletRequest request,
-                          HttpServletResponse response) throws IOException {
+                          HttpServletResponse response){
 
 
-
-        request.removeAttribute("error");
-        User user=  userService.getUserByName(role , userName, passWord);
+        User user= userService.getUserByNameAndRole(role , userName, passWord);
+        logger.info("返回条数------------"+user+"--------------<");
         if (user == null) {
-            request.setAttribute("error", "用户名或密码不符...");
-            return "redirect:/userLogin.html";
+            session.setAttribute("error", "用户名或密码不符...");
+            return "userLogin";
         } else {
             session.setAttribute(Conts.USER_SESSION, user);
         }
