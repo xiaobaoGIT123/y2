@@ -1,11 +1,9 @@
 package cn.bdqn.controller;
 
-<<<<<<< HEAD
 import cn.bdqn.coots.Conts;
 import cn.bdqn.pojo.House;
-=======
->>>>>>> origin/master
 import cn.bdqn.pojo.User;
+import cn.bdqn.service.HouseService;
 import cn.bdqn.service.UserService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -40,6 +38,8 @@ public class UserController {
 
     @Resource
     UserService userService;
+    @Resource
+    HouseService houseService;
 
     private static Logger logger = Logger.getLogger(UserController.class);
 
@@ -73,53 +73,12 @@ public class UserController {
     @RequestMapping("/addSave.html")
     public String addSave(User user, HttpSession session, int role, MultipartFile Picture) {
 
-        String idPicPath = "";
-        if (!Picture.isEmpty()) {
-            //获取文件的路径  File.separator系统的自适应分隔符
-            String filePath = session.getServletContext().getRealPath("statics" + File.separator + "uploadfiles");
-            //获取源文件名
-            String fileOldName = Picture.getOriginalFilename();
-            //获取文件的后缀
-//            String sufix=fileOldName.substring(fileOldName.lastIndexOf(".")+1,fileOldName.length());
-            String sufix = FilenameUtils.getExtension(fileOldName);
-            List<String> sufixs = Arrays.asList(new String[]{"jpg", "png", "jpeg", "pneg"});
-            if (Picture.getSize() > 500000) {
-                session.setAttribute("uploadFileError", "文件太大了");
-                return "userlogin";
-            } else if (sufixs.contains(sufix)) {
-                //重新命名，目的就是解决重名和字符乱码问题
-
-                String fileName = System.currentTimeMillis() + new Random().nextInt(1000000) + "_person." + sufix;
-                File file = new File(filePath, fileName);
-
-//                File file2 = new File(fileName);//图片2
-                if (!file.exists()) {
-                    file.mkdirs();
-                }
-                try {
-                    Picture.transferTo(file);
-//                    Picture.transferTo(file2);
-
-        session.removeAttribute("number");
-       List<House> houseList=houseService.getHouse();
-
-        for (House item:houseList) {
-            item.setHousePicture(item.getHousePicture().split("/")[0]);
-            item.setHouseTime(item.getHouseTime().split(" ")[0]);
-            item.setHousePrice(item.getHousePrice()+"元/月");
-        }
-
-        session.setAttribute("houseList", houseList);
-
-        //这下面的集合是用于滚播循环使用的
-        List<House> playerList=houseList;
-        session.setAttribute("playerList", playerList);
-        return "main";
+        return null;
     }
 
     //进入登录界面
     @RequestMapping("/userLogin.html")
-    public String userLogin(){
+    public String userLogin() {
 
         return "userLogin";
     }
@@ -127,13 +86,14 @@ public class UserController {
 
     /**
      * 登录验证
+     *
      * @param userName
      * @param passWord
      * @param role
      * @param session
      * @return
      */
-    @RequestMapping(value = "/doLogin.html",method = RequestMethod.POST)
+    @RequestMapping(value = "/doLogin.html", method = RequestMethod.POST)
 //    @ResponseBody
     public String doLogin(String userName, String passWord,
                           int role, HttpSession session,
@@ -141,60 +101,29 @@ public class UserController {
                           HttpServletResponse response) throws IOException {
 
 
-
         request.removeAttribute("error");
-        User user=  userService.getUserByName(role , userName, passWord);
+//        User user = userService.getUserByName(role, userName, passWord);
+        User user=null;
         if (user == null) {
             request.setAttribute("error", "用户名或密码不符...");
             return "redirect:/userLogin.html";
         } else {
             session.setAttribute(Conts.USER_SESSION, user);
         }
-            return "main";
+        return "main";
     }
-
-
 
 
     //退出
     @RequestMapping("/loginOut.html")
 //    @ResponseBody
-    public Object loginOut(HttpSession session){
+    public Object loginOut(HttpSession session) {
 //        boolean isgod=false;
         session.removeAttribute(Conts.USER_SESSION);
-        if(session.getAttribute(Conts.USER_SESSION)==null){
+        if (session.getAttribute(Conts.USER_SESSION) == null) {
             return "redirect:/login.html";
         }
-            return "redirect:/doLogin.html";
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    session.setAttribute("uploadFileError", "上传失败");
-                    return "userlogin";
-                }
-                idPicPath = filePath + File.separator + fileName;
-                System.out.println("=====>" + idPicPath);
-            } else {
-                session.setAttribute("uploadFileError", "文件格式不对");
-                return "userlogin";
-            }
-        }
-
-        user.setRole(role);
-        logger.info(user.toString());
-        user.setHeadPicture(idPicPath);
-
-        int count = userService.addUser(user);
-
-        if (count == 1) {
-            logger.info("注册成功");
-//           注册成功，跳转主页面
-            return "main";
-        } else {
-            logger.info("注册失败");
-            return " userlogin";
-        }
-
-
+        return "redirect:/doLogin.html";
     }
 
     //同名验证
@@ -215,13 +144,13 @@ public class UserController {
         return JSONArray.toJSONString(resultMap);
     }
 
-    @RequestMapping(value = "/getCode.html",method = RequestMethod.GET)
+    @RequestMapping(value = "/getCode.html", method = RequestMethod.GET)
     @ResponseBody
     public String getCode(String phone, HttpSession session) {
 
         String codeid = "";
         String ret = "";
-logger.info(phone);
+        logger.info(phone);
         if (session.getAttribute("code") == null) {
             // 随机码
             int code = 0;
@@ -306,6 +235,6 @@ logger.info(phone);
 
             e.printStackTrace(System.out);
         }
-         return "";
+        return "";
     }
 }
