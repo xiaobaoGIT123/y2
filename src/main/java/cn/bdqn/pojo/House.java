@@ -1,4 +1,9 @@
 package cn.bdqn.pojo;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
+
 //房子
 public class House {
     private Integer hid;
@@ -10,10 +15,18 @@ public class House {
     private Integer houseTypeId;//房子类型id
     private String houseAddress;//地址
     private String housePrice;//价格
-
+    private String type;//房子类型名称
     private String houseDescribe;//描述
     private String houseTitle;//标题
     private String houseArea;//面积
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public String getHouseTitle() {
         return houseTitle;
@@ -119,5 +132,25 @@ public class House {
 
     public void setHouseAddress(String houseAddress) {
         this.houseAddress = houseAddress;
+    }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "hid=" + hid +
+                ", housePicture='" + housePicture + '\'' +
+                ", houseLabel='" + houseLabel + '\'' +
+                ", houseStatus=" + houseStatus +
+                ", houseTime='" + houseTime + '\'' +
+                ", houseUser=" + houseUser +
+                ", houseTypeId=" + houseTypeId +
+                ", houseAddress='" + houseAddress + '\'' +
+                ", housePrice='" + housePrice + '\'' +
+                ", type='" + type + '\'' +
+                ", houseDescribe='" + houseDescribe + '\'' +
+                ", houseTitle='" + houseTitle + '\'' +
+                ", houseArea='" + houseArea + '\'' +
+                ", user=" + user +
+                '}';
     }
 }

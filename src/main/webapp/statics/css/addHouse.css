@@ -7,7 +7,7 @@
 /*全局div*/
 
 body {
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 #all {
@@ -64,8 +64,8 @@ legend {
 
 #add1 input {
 	width: 200px;
-	height: 26px;
-	margin-top: 5px;
+	height: 23px;
+	margin-top: 3px;
 	margin-bottom: 5px;
 }
 #add1 select{
@@ -73,11 +73,9 @@ legend {
 	height: 30px;
 	text-align: center;
 }
-/*房源描述*/
-#add1 input:last-child{
-	width: 495px;
+#add1 ul{
+	list-style: none;
 }
-
 
 /*房子标签div*/
 #homespan{
@@ -100,9 +98,6 @@ legend {
 	color: white;
 }
 
-
-/*<!--上传图片控件-->*/
-
 .container {
 	width: 100%;
 	text-align: center;
@@ -117,60 +112,7 @@ legend {
 
 
 /*图片上传*/
-.float {
-	/*float: right;*/	
-	width: 100px;
-	height: 100px;
-	overflow: hidden;
-	border: 1px solid #E0FFFF;
-	border-radius: 10px;
-	padding: 5px;
-	margin: 5px;
-	position: relative;
-	text-align: center;
-	margin: 0 auto;
-	margin-right: 15px;
-	top: -400px;
-	left: 490px;
-	display: inline-block;
-	
-}
 
-img {
-	position: relative;
-}
-
-.result {
-	width: 100px;
-	height: 100px;
-	text-align: center;
-	box-sizing: border-box;
-	/*border: 1px solid darkslategray;*/
-}
-
-#file_input {
-	display: none;
-}
-
-.delete {
-	width: 100px;
-	height: 100px;
-	position: absolute;
-	text-align: center;
-	line-height: 100px;
-	z-index: 10;
-	font-size: 30px;
-	background: #F0FFFF;
-	color: #DC143C;
-	opacity: 0;
-	/*transition-duration: 0.7s;*/
-	-webkit-transition-duration: 0.5s;
-}
-
-.delete:hover {
-	cursor: pointer;
-	opacity: 1;
-}
 /*提交按钮*/
 #submit{
 	color: lightyellow;
@@ -185,4 +127,52 @@ img {
 }
 #submit:hover{
 	background-color:#388E8E;
+}
+
+/*图片预览*/
+.float{
+    /*float:left;*/
+    width : 100px;
+    height: 100px;
+    overflow: hidden;
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    top:-390px;
+    left: 420px;
+    margin-right: 50px;
+
+}
+#select{
+	position: relative;
+	top:-260px;
+	left: 10px;
+	padding: 5px 50px 5px 50px;
+	border: none;
+	outline: none;
+
+}
+#select:hover{
+	background-color: #152a36;
+	color: white;
+
+}
+.result{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+#file_input{
+    display: none;
+}
+.delete:hover{
+    cursor: pointer;
+    opacity: 1;
 }

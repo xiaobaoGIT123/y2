@@ -15,38 +15,38 @@
 
 		<div id="bigbox">
 			<%--这个span是用户id隐藏域--%>
-			<span id="userId" style="display: none"></span>
+			<span id="userId" style="display: none">${userSession.uid}</span>
 			<%--这个span是用户头像隐藏域--%>
-			<span id="headPicture" style="display: none"></span>
+			<span id="headPicture" style="display: none">${userSession.headPicture}</span>
 			<%--这个span是用户角色隐藏域--%>
-			<span id="role" style="display: none"></span>
+			<span id="role" style="display: none">${userSession.role}</span>
+				<!--头部-->
+				<header>
+					<%--<img src="/statics/img/l_img/headimg.png" style="width: 88%;height: 95px;" align="right"/>--%>
+					<!--用户名div-->
+					<div id="UserType">
+						<div>
+							<p align="left">
+								<c:if test="${userSession==null}">
+									<img src="/statics/img/l_img/tou.png"/>
+								</c:if>
+								<c:if test="${userSession.headPicture!=null}">
+									<img src="/statics/img/l_img/head_1.png"/>
+								</c:if>
+								<span>${userSession.userName}</span>
+							</p>
+						</div>
 
-
-
-			<!--用户名div-->
-				<div id="UserType">
-					<div>
-						<p align="left">
-							<img src="/statics/img/l_img/undercheck.png"/>
-							<span>您好！请登录</span>
-						</p>
+						<a href="javascript:void(0)" id="addHouse" onclick="addHouse()">发布房源</a>
 					</div>
 
-					<a href="javascript:void(0)" id="addHouse" onclick="addHouse()">发布房源</a>
-				</div>
-			<!--头部-->
-			<header>
-				<div id="div1">
-					<ul>
-						<li><img src="/statics/img/l_img/head_1.png" alt=""></li>
-						<li><img src="/statics/img/l_img/head_2.png" alt=""></li>
-						<li><img src="/statics/img/l_img/head_3.png" alt=""></li>
-						<li><img src="/statics/img/l_img/head_4.png" alt=""></li>
-					</ul>
-				</div>
-			</header>
-			<a href="javascript:void(0)" id="goOut" style="float: right;margin-top: 10px;font-size: 14px;display: none;" onclick="goOut();">退出登录</a>
-			<!--主体-->
+
+
+				</header>
+
+			<a href="javascript:void(0)" id="goOut" style="float: right;margin-top: 5px;font-size: 14px;display: none;" onclick="goOut()">退出登录</a>
+
+		<!--主体-->
 			<section>
 				<!--左边登录、注册框、最新资讯-->
 				<div id="logindiv">
@@ -54,50 +54,12 @@
 						<input type="button" value="登录" name="Gointo" />
 						<input type="button" value="注册" name="Gonews" />
 					</p>
-					<!--登录表单框-->
-					<div id="Loginfrom">
-						<form action="javascript:void(0)" method="post" id="myForm">
-							<table>
-								<!--登录形态单选按钮-->
-								<tr>
-									<td colspan="3" align="center">
-										<input type="radio" value="0" name="role" checked="checked" />用户
-										<input type="radio" value="1" name="role" />房主
-										<input type="radio" value="2" name="role" />后台
-									</td>
-								</tr>
-								<tr>
-									<td colspan="3" align="center">用户名:<input type="text" name="userName" /></td>
-								</tr>
-								<tr>
-									<td colspan="3" align="right">密&nbsp;&nbsp;&nbsp;码:<input type="password" name="passWord" /><br/>
-										<a href="#">第三方登录</a>&nbsp;|&nbsp;
-										<a href="#">找回密码</a>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="3" align="center"><span></span></td>
-								</tr>
-								<tr align="center">
-									<td>
-										<input type="button" name="subisok" value="登录" />
-									</td>
-									<td></td>
-									<td>
-										<input type="reset" name="btnexit" value="重置" />
-									</td>
-								</tr>
 
-							</table>
-						</form>
-
-					</div>
-
-					<span id="newhomes">↓↓↓最新房源资讯↓↓↓</span>
+					<span id="newhomes">最 新 房 源 资 讯</span>
 					<!--最新房源资讯div-->
 					<div id="news" onmouseover="tz()" onmouseout="ks()">
 						<ul id="p1">
-						<c:forEach items="${houseList}" var="li">
+						<c:forEach items="${playerList}" var="li">
 							<li>
 								<a href="">${li.houseTitle}</a>
 							</li>
@@ -112,85 +74,73 @@
 				<div id="homeShow">
 					<!--房源搜索-->
 					<div id="findhome">
-						
-						<form action="#" method="post">
 
-						<p>
-							<input type="radio" value="hometype" name="homeradio" checked="checked"/>根据房源类型查询
-							<input type="radio" value="price" name="homeradio" />根据房源价格查询
-						</p>
-						<div>
-							<!--下拉框，根据房源类型查询-->
-							<select id="s1" name="houseTypeId">
-								<option value="0">选择房源类型</option>
-								<option value="1">单间</option>
-								<option value="2">一室一厅</option>
-								<option value="3">二室一厅</option>
-								<option value="4">二室二厅</option>
-								<option value="5">三室一厅</option>
-								<option value="6">四室一厅</option>
-								<option value="7">其它类型</option>
-								
-							</select>
-							<!--下拉框，根据房源价格查询-->
-							<select id="s2" name="housePrice">
-								<option>选择房源价格</option>
-								<option>100元~500元</option>
-								<option>100元~500元</option>
-								<option>100元~500元</option>
-								<option>100元~500元</option>
-								<option>100元~500元</option>
-							</select>
-							
-							<input type="text" name="houseAddress" placeholder=" 请输入房子的描述,支持模糊查询..." />
-							<input type="submit" value="搜索房源" name="finds" id="finds"/>
-						</div>
-						
+						<form action="/getList.html" method="post">
+
+							<p>
+								<input type="radio" value="hometype" name="homeradio" id="hometype" checked="checked"/><label for="hometype">根据房源类型查询</label>
+								<input type="radio" value="price" name="homeradio" id="price"/><label for="price">根据房源价格查询</label>
+							</p>
+
+							<div>
+								<!--下拉框，根据房源类型查询-->
+								<select id="s1" name="houseTypeId" >
+									<option value="0">选择房源类型</option>
+									<option value="1">单间</option>
+									<option value="2">一室一厅</option>
+									<option value="3">二室一厅</option>
+									<option value="4">二室二厅</option>
+									<option value="5">三室一厅</option>
+									<option value="6">四室一厅</option>
+									<option value="7">其它类型</option>
+
+								</select>
+								<!--下拉框，根据房源价格查询-->
+								<select id="s2" name="housePrice">
+									<option value="0/0">选择房源价格</option>
+									<option value="100/300">100元--300元</option>
+									<option value="300/600">300元--600元</option>
+									<option value="600/900">600元--900元</option>
+									<option value="900/1200">900元--1200元</option>
+									<option value="1200/1500">1200元--1500元</option>
+								</select>
+
+								<input type="text" name="houseAddress" placeholder=" 请输入房源地址,支持模糊查询..." />
+								<input type="submit" value="搜索房源" name="finds" id="finds"/>
+							</div>
+
 						</form>
 
 					</div>
 					<!--房源展示框-->
 					<div id="lookhome">
 						<!--房源详细信息-->
+                        <div id="selectdiv">
+                            <h3 align="center">${number}</h3>
 						<c:forEach items="${houseList}" var="li">
 						<div class="showhome">
-							<img src="/statics/img/l_img/undercheck.png" />
-							<table>
+							<c:if test="${li.housePicture==''}">
+								<img src="/statics/img/l_img/moren.png" title="房主还未上传图片"/>
+							</c:if>
+							<c:if test="${li.housePicture!=''}">
+								<img src="/statics/uploadfiles/${li.housePicture}" title="房源图片"/>
+							</c:if>
+							<table >
 								<tr>
-									<td>发布时间：2018-12-21&nbsp;&nbsp;&nbsp;</td>
-									<td>房子类型：三室一厅&nbsp;&nbsp;&nbsp;</td>
-									<td>房子价格：1500/月</td>
+									<td>发布时间：${li.houseTime}&nbsp;&nbsp;&nbsp;</td>
+									<td>房源类型：${li.type}&nbsp;&nbsp;&nbsp;</td>
+									<td>房源价格：${li.housePrice}</td>
 								</tr>
 								<tr>
-
-									<td colspan="2">房子地址：${li.houseAddress}&nbsp;&nbsp;&nbsp;</td>
-									<td>
-										<a href="#">详细信息</a>
-									</td>
+									<td colspan="2">房源地址：${li.houseAddress}&nbsp;&nbsp;&nbsp;</td>
+									<td><a href="#">房源详细信息</a></td>
 								</tr>
 							</table>
 						</div>
 						</c:forEach>
-
-
-					<!--上一页下一页按钮-->
-					<div id="pageBtn">
-						<ul>
-							<li>
-								<a href="#">首页</a>
-							</li>
-							<li>
-								<a href="#">上一页</a>
-							</li>
-							<li>
-								<a href="#">下一页</a>
-							</li>
-							<li>
-								<a href="#">末页</a>
-							</li>
-						</ul>
-					</div>
-				</div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
 			<!--尾部-->
@@ -198,7 +148,7 @@
 				<div id="onediv">
 					<table style="margin: 0 auto;">
 						<tr>
-							<td rowspan="9" colspan="2"><img src="/statics/img/l_img/undercheck.png" /></td>
+							<td rowspan="9" colspan="2"><img src="/statics/img/l_img/undercheck.png" style="width: 100px;height: 100px"/></td>
 						</tr>
 						<tr>
 							<td id="youhui">
