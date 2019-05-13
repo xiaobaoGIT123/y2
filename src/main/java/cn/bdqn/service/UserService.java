@@ -13,4 +13,7 @@ public interface UserService {
 
     //用户注册
     int addUser(User user);
+
+    //手机号码验证
+    User getUserPhoneByPhone(String phone);
 }

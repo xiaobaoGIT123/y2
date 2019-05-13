@@ -19,4 +19,9 @@
     <insert id="addUser" parameterType="User">
         INSERT INTO `user` VALUES(NULL,#{userName},#{passWord},#{phone},#{role},0,0,'男',18,#{userCardId},#{headPicture},0);
     </insert>
+
+    <!--手机号码验证-->
+    <select id="getUserPhoneByPhone" resultType="user" parameterType="String">
+        SELECT * FROM `user` WHERE phone = #{phone};
+    </select>
 </mapper>
