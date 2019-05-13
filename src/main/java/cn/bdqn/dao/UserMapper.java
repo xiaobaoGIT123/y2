@@ -28,4 +28,8 @@ public interface UserMapper {
 
     //(添加用户)
     int addUser(User user);
+
+
+    //手机号码验证
+    User getUserPhoneByPhone(String phone);
 }

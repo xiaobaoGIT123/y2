@@ -119,7 +119,7 @@ public class UserController {
 
     }
 
-    //同名验证
+    //用户名同名验证
     @RequestMapping("/ucexist.html")
     @ResponseBody
     public Object checkName(String userName) {
@@ -229,5 +229,24 @@ logger.info(phone);
             e.printStackTrace(System.out);
         }
          return "";
+    }
+
+
+    //手机号码同名验证
+    @RequestMapping("/upexist.html")
+    @ResponseBody
+    public Object checkPhone(String phone) {
+        HashMap<String, String> phoneResultMap = new HashMap<String, String>();
+        logger.info(phone);
+        User user = userService.getUserPhoneByPhone(phone);
+        if ( user != null) {
+            logger.info("手机号码已存在");
+            phoneResultMap.put("err", "号码已存在");
+        } else {
+            logger.info("可用");
+            phoneResultMap.put("o", "o");
+        }
+
+        return JSONArray.toJSONString(phoneResultMap);
     }
 }

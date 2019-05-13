@@ -53,6 +53,7 @@ $(function () {
 
 
 
+    //用户名同名验证
     $("input[name='userName']").blur( function () {
         //ajax后台验证--userName是否已存在
 
@@ -65,11 +66,12 @@ $(function () {
         $.post("/user/ucexist.html",{ userName: userName},function (data) {
 
             if ( data.ok== "ok") {//账号可用，正确提示
-
+                $("#tishi").html("用户名可用")
 
             } else {//账号已存在，错误提示
                 $("input[name='userName']").val("");
                $("#tishi").html("用户名已存在")
+
             }
         },"JSON")
 
@@ -88,7 +90,7 @@ $(function () {
         //后台判断是否过期，否则不能再次获取
 
         var phone = $("input[name='phone']").val()
-        alert("获取验证码111")
+
         if (phone != "") {
 
             $.getJSON("/user/getCode.html", {phone: phone}, function (data) {
@@ -109,5 +111,32 @@ $(function () {
 
     })
 
+
+    //用户手机号码同名验证
+    $("input[name='phone']").blur( function () {
+
+        //ajax后台验证--phone是否已存在
+        var phone =$("input[name='phone']").val();
+
+        if(phone==""){
+
+        }else{
+
+
+            $.post("/user/upexist.html",{ phone: phone},function (dat) {
+
+                if ( dat.o== "o") {//号码可用，正确提示
+
+
+                } else {
+                    //号码已存在，错误提示
+
+                    alert("手机号码已存在,请重新输入");
+                    $("input[name='phone']").val("");
+
+                }
+            },"JSON")
+        }
+     });
 
 })
