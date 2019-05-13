@@ -22,12 +22,23 @@
     <!--<mvc:default-servlet-handler/>-->
     <!--mvc注解-->
     <mvc:annotation-driven/>
+
+    <!--静态资源配置-->
+    <mvc:resources mapping="/statics/**" location="/statics/"/>
+    <!--文件上传-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="maxInMemorySize" value="5000000"/>
+    </bean>
+
     <!--映射配置-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
-
     </bean>
+<<<<<<< HEAD
+
+=======
     
     <mvc:resources mapping="/statics/**" location="/statics/"/>
 <!--<mvc:default-servlet-handler/>-->
@@ -49,4 +60,5 @@
         <property name="defaultEncoding" value="utf-8"/>
         <property name="maxUploadSize" value="5000000"/>
     </bean>
+>>>>>>> origin/master
 </beans>

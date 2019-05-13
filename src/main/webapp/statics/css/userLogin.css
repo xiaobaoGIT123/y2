@@ -1,0 +1,75 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	
+	background:-webkit-linear-gradient(white,lightblue,skyblue);height: 100%;
+}
+.container{
+	/*border: 1px dashed red;*/
+	width: 500px;
+	margin: 0 auto;
+	margin-top: 50px;
+	height: 500px;
+	background: skyblue;
+	border-radius: 10px;
+}
+
+/*table th:first-child{
+	border: 1px solid red;
+	height: 30px;
+	border-radius: 20px;
+
+
+}*/
+table{
+
+	width: 100%;
+}
+
+
+table tr td:first-child{
+	width: 330px;
+	text-align: center;
+
+}
+table tr td:nth-child(2){
+
+	width: 100px;
+}
+table tr td:last-child{
+	width: 160px;
+
+}
+input[type='file']{
+	width: 180px;
+}
+
+table tr{
+	height: 50px;
+}
+
+form div{
+	font-size: 20px;
+	/*border: 1px dashed red;*/
+	width: 500px;
+	height: 30px;
+	text-align: center;
+}
+
+
+
+
+
+table th:last-child input[name="1122"]{
+
+	font-size: 20px;
+	background: deepskyblue;
+	border: none;
+	border-radius: 20px;
+	color: white;
+	margin: 0px 15px 0px 15px;
+	padding: 5px 20px 5px 20px;
+}

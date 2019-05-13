@@ -6,64 +6,42 @@
 #bigbox{
 	/*border: 1px red solid;*/
 	width: 1000px;
-	height: 1500px;
+	height: 1000px;
 	margin: 0 auto;
-	background-color: #E0FFFF;
+	background-color: #CAE1FF;
+	/*background: url(/statics/img/l_img/main.png) no-repeat center center fixed;*/
+	/*-webkit-background-size: cover;*/
+	/*-moz-background-size: cover;*/
+	/*-o-background-size: cover;*/
+	/*background-size: cover;*/
 }
 /*头部*/
 header{
-	width: 100%;
-	height: 100px;
+	width: 1000px;
+	height: 150px;
 	margin: 0 auto;
-    background:-webkit-linear-gradient(left, #66CD00 5%, #27408B 35%, #98FB98 70%, #DC143C 100%);
-    background:-moz-linear-gradient(left, #66CD00 5%, #27408B 35%, #98FB98 70%, #DC143C 100%);
-    background:-o-linear-gradient(left, #66CD00 5%, #27408B 35%, #98FB98 70%, #DC143C 100%);
-    background:linear-gradient(left, #66CD00 5%, #27408B 35%, #98FB98 70%, #DC143C 100%);
-
-}
-/*头部滚播图div*/
-#div1 {
-	/*border: 1px red solid;*/
-	/*width: 848px;
-	height: 90px;*/
-	width:  848px;
-	height: 100%;
-	/*margin: 100px auto;*/
-	position: relative;
-	overflow: hidden;
-}
-#div1 ul {
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-#div1 ul li {
-	float: left;
-	/*width: 178px;
-	height: 108px;*/
-	width: 200px;
-	height: 100%;
-	list-style: none;
-	margin-left: 10px;
-}
-
-/*滚播图*/
-#div1 ul li img{
-	width: 200px;
-	height: 100%;
-	vertical-align: middle;
+    /*border: 1px red solid;*/
+    background: url(/statics/img/l_img/headimg.png) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /*用户名div*/
 #UserType{
-	background: #6CA6CD;
+    background-color: rgba(205,205,180,0.7);
 	font-size: 16px;
 	text-align:center;
 	line-height: 50px;
 	float: left;
-	width: 150px;
-	height: 100px;
-	
+	width: 145px;
+	height: 100%;
+    display: inline-block;
+    /*border: 1px red solid;*/
+}
+#UserType div{
+    margin-top: 15px;
 }
 /*发布房源*/
 #UserType a{
@@ -91,21 +69,23 @@ header{
 
 /*主体*/
 section{
-	/*border: 1px black solid;*/
+	border: 1px black solid;
 	width: 1000px;
-	height: 1100px;
+	height: 680px;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 30px;
 	/*background-color: forestgreen;*/
 }
 /*左边主体登录注册div*/
 #logindiv{
-	/*border: 1px black solid;*/
+	/*border-bottom: 1px red solid;*/
+    /*background-color: #FF6633;*/
 	float: left;
 	top:160px;
 	width: 270px;
-	height: 1080px;
-	background:-webkit-linear-gradient(#283c86 0%,#CAE1FF 20%);
+	height: 820px;
+    border-top: #4A708B 1px solid;
+	/*background:-webkit-linear-gradient(#B3EE3A 0%,#CAE1FF 20%);*/
 }
 
 /*登录、注册 p标签*/
@@ -124,9 +104,10 @@ section{
 	font-size: 18px;
 	border-radius: 5px;
 	text-align: center;
+    background: #50c9c4;
 }
 #logindiv p input:hover{
-	background: #76EEC6;
+	background: #708090;
 	font-weight: bold;
 }
 /*登录表单div*/
@@ -134,12 +115,14 @@ section{
 	/*border: 1px black solid;*/
 	margin: 0 auto;
 	width: 100%;
-	height: 270px;
+	height: 300px;
 	float:left;
-	background-color: cornflowerblue;
+	background-color: #8ec4b7;
 	display: none;
 	color: white;
+
 }
+
 /*登录表格*/
 #Loginfrom table{
 	margin: 0 auto;
@@ -152,6 +135,15 @@ section{
 	height: 15px;
 	font-size: 25px;
 }
+/*单选按钮边上的图片*/
+#Loginfrom table tr:first-child img{
+	width : 25px;
+	height: 30px;
+	vertical-align: middle;
+    /*border: 1px red solid;*/
+}
+
+
 /*登录表格行*/
 #Loginfrom table td{
 	/*border: 1px black solid;*/	
@@ -163,12 +155,18 @@ section{
 	line-height: 10px;
 }
 /*表单用户名框*/
-#Loginfrom table tr:nth-of-type(3) td input{
-	height: 20px;
+#Loginfrom table tr:nth-of-type(2) td input{
+	height: 26px;
+    border: none;
+    border: #4A708B 1px solid;
+    background-color: transparent;
 }
 /*表单密码框*/
-#Loginfrom table tr:nth-of-type(2) td input{
-	height: 20px;
+#Loginfrom table tr:nth-of-type(3) td input{
+	height: 26px;
+    border: none;
+    border: #4A708B 1px solid;
+    background-color: transparent;
 }
 /*第三方登录和找回密码*/
 #Loginfrom table tr:nth-of-type(3) a{
@@ -183,9 +181,16 @@ section{
 }
 /*提示语句*/
 #Loginfrom table tr:nth-of-type(4) td{
-	font-size: 14px;
-	color:#FF4500;
+	font-size: 10px;
+	color:#FF6633;
 	height: 40px;
+}
+/*错误图片*/
+#errorimg{
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	display: none;
 }
 /*登录、退出按钮*/
 #Loginfrom table tr:last-child input{
@@ -216,7 +221,7 @@ section{
 /*最新资讯滚动条*/
 #news {
 	width: 100%;
-	height: 500px;
+	height: 350px;
 	overflow: hidden;
 	/*border-bottom: 2px #8B8989 solid;*/
 	/*这里必须设置哦，否则滚动会消失的，如果设置为scroll，更容易明白原理*/
@@ -230,22 +235,25 @@ section{
 
 /*搜索、展示房源信息的div盒子*/
 #homeShow{
-	border: 2px black solid;
+	border: 2px white solid;
 	float: right;
 	width: 725px;
-	height: 1076px;
-	top: 160px;
+	height: 600px;
+	top: -30px;
 	right: 10px;
+
 }
 /*搜索div*/
 #findhome{
 	/*border: 1px orange solid;*/
 	/*margin: 0 auto;*/
 	width: 100%;
-	height: 100px;
+	height: 120px;
 	/*margin-top: 5px;*/
-	background: #B3EE3A;
+	background: rgba(22, 54, 49, 0.4);
+
 }
+
 #findhome p {
 	/*width: 460px;*/
 	/*background: red;*/
@@ -255,7 +263,7 @@ section{
 #findhome p input{
 	width: 20px;
 	height: 20px;
-	margin-top: 10px;
+	margin-top: 30px;
 	margin-left: 20px;
 }
 /*下拉框*/
@@ -268,6 +276,7 @@ select{
 	float: left;
 	margin-top: 12px;
 	font-size: 16px;
+	border-radius: 5px;
 }
 
 /*查询输入框*/
@@ -286,18 +295,21 @@ select{
 /*查询按钮*/
 #finds {
 	border: none;
-	color: #FFFFFF;
+	color: #CDCDC1;
 	text-decoration: none;
 	padding: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
 	text-align: center;
 	font-size: 20px;
-	background: grey;
+	background: rgba(22, 54, 49, 1);
 	border-radius: 0 5px 5px 0;
 	float: right;
 	margin-right: 17px;
 	margin-top: 10px;
+}
+#finds:hover{
+    background: rgba(74, 84, 78, 0.91);
 }
 
 /*查询p标签*/
@@ -307,19 +319,6 @@ select{
 }
 
 
-/*查询按钮*/
-#findhome label input:last-child{
-	width:80px;
-	height:45px;
-	font-size: 20px;
-	border: 0;
-	outline: none;
-	border-radius: 5px;
-	margin-top: 3px;
-	margin-left: 5px;
-	position: absolute;
-	top: 194px;
-}
 #findhome label input:last-child:hover{
 	background: gray;
 }
@@ -327,7 +326,7 @@ select{
 #lookhome{
 	/*border: 2px red solid;*/
 	width: 725px;
-	height: 900px;
+	height: 450px;
 	/*margin: 0 auto;*/
 	margin-top: 5px;
 	background: #A4D3EE;
@@ -337,22 +336,24 @@ select{
 /*房源信息小框div*/
 .showhome{
 	width: 710px;
-	height: 120px;
+	height: 90px;
 	background: #DBDBDB;
-	border-bottom: 5px #2F4F4F solid;
+	border-bottom: 15px white solid;
+    /*margin-bottom: 5px;*/
 }
 /*房源小框图片*/
 .showhome img{
-	width: 120px;
-	height: 120px;
+	width: 80px;
+	height: 80px;
 	float: left;
 }
 /*房源小框表格*/
 .showhome table{
 	float: right;
-	margin-top: 25px;
+	margin-top: 10px;
 	font-family: "微软雅黑";
-	font-size: 16px;	
+	font-size: 16px;
+    margin-right: 20px;
 }
 .showhome table td{
 	line-height: 30px;
@@ -369,40 +370,21 @@ select{
 	width: 20px;
 	height: 30px;
 	color: #5E5E5E;
-	font-size: 18px;
-	font-weight: bold;
+	font-size: 17px;
+	/*font-weight: bold;*/
 	padding: 0 0 0  40px;
 }
 .showhome table a:hover{
-	color: #191970;
+	color: #042c81;
+    /*text-decoration: none;*/
 }
-/*切换页码div*/
-#pageBtn{
-	text-align: center;
-	line-height: 70px;
-	/*background: #9FB6CD;*/
-	position: absolute;
-	top: 1160px;
-	left: 650px;
-}
-#pageBtn li{
-	display: inline-block;
-	margin-right: 20px;
-	font-size: 20px;	
-}
-#pageBtn li a{
-	color: #0000FF;
-	/*text-decoration: none;*/
-}
-
-
 /*尾部*/
 footer{
 	/*border: 1px red solid;*/
 	width: 1000px;
-	height: 280px;
+	height: 220px;
 	margin: 0 auto;
-	margin-top: 30px;
+    margin-top: 10px;
 	background:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0.2, #E0FFFF), color-stop(0.6, #DBDBDB), color-stop(0.95, #4A708B));
 	background:-webkit-linear-gradient(#E0FFFF 20%, #DBDBDB 60%, #4A708B 95%);
 	background:-moz-linear-gradient(#E0FFFF 20%, #DBDBDB 60%, #4A708B 95%);
@@ -414,13 +396,13 @@ footer ul{
 	/*border: 1px red solid;*/
 	width: 100%;
 	height: 40px;
-	margin-left: 70px;
+	/*margin-left: 40px;*/
 	margin-top: 20px;
+	text-align:center;
 }
 footer ul li{
 	list-style: none;
-	margin-right: 20px;
-	float:left;
+	display: inline-block;
 }
 footer ul li a{
 	font-size: 15px;

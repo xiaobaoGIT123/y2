@@ -9,6 +9,62 @@
         </select>
         <!--查看所有的房子-->
         <select id="getHouse" resultType="house">
-                SELECT * FROM `house`
+                SELECT * FROM  housetype,house WHERE housetype.`tid`=house.`houseTypeId` ORDER BY houseTime DESC
+        </select>
+
+        <!--添加房子-->
+        <insert id="addHouse"  parameterType="house">
+            INSERT INTO house VALUES(NULL,#{housePicture},#{houseLabel},#{houseStatus},#{houseTime},#{houseUser},#{houseTypeId},#{houseAddress},#{housePrice},#{houseDescribe},#{houseTitle},#{houseArea})
+        </insert>
+
+        <!--查询条数-->
+        <select id="getHouseCount" resultType="int" parameterType="Map">
+                <choose>
+                        <!--<when test="opr=='quanbu'">-->
+                            <!--SELECT COUNT(1) FROM housetype,house WHERE housetype.`tid`=house.`houseTypeId`-->
+                        <!--</when>-->
+                        <when test="opr=='jiage'">
+                                select COUNT(1) from house where housePrice BETWEEN #{housePrice1} AND #{housePrice2}
+                        </when>
+                        <when test="opr=='leixing'">
+                                select COUNT(1) from house where houseTypeId=#{houseTypeId}
+                        </when>
+                      <when test="opr=='dizhi'">
+                        select COUNT(1) from house,housetype where housetype.`tid`=house.`houseTypeId`
+                      </when>
+
+                </choose>
+
+                <if test="houseAddress!= ''">
+                        and houseAddress like concat('%',#{houseAddress},'%')
+                </if>
+
+        </select>
+        
+        
+        <!--分页查询房子-->
+        <select id="getHouseByPage" resultType="house">
+               <choose>
+                        <!--<when test="map.opr=='quanbu'">-->
+                                <!--select * from housetype,house WHERE  "housetype.`tid`=house.`houseTypeId`"-->
+                        <!--</when>-->
+                        <when test="map.opr=='jiage'">
+                                select * from housetype,house where housePrice BETWEEN #{map.housePrice1} AND #{map.housePrice2} AND housetype.`tid`=house.`houseTypeId`
+                        </when>
+                        <when test="map.opr=='leixing'">
+                                select * from housetype,house where houseTypeId=#{map.houseTypeId} AND housetype.`tid`=house.`houseTypeId`
+                        </when>
+                        <when test="map.opr=='dizhi'">
+                            select * from housetype,house where  housetype.`tid`=house.`houseTypeId`
+                        </when>
+                        <!--<otherwise>-->
+                                <!--select * from housetype,house  where 1=1 AND housetype.`tid`=house.`houseTypeId`-->
+                        <!--</otherwise>-->
+                </choose>
+
+                <if test="map.houseAddress != ''">
+                        AND houseAddress like concat('%',#{map.houseAddress},'%')
+                </if>
+                order by houseTime desc LIMIT #{currentPage},#{size}
         </select>
 </mapper>
