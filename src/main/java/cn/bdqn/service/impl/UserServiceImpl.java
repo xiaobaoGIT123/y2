@@ -18,8 +18,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getUserByUsrName(String userName) {
+        return userMapper.getUserByUsrName(userName);
+    }
+
+    @Override
     public User getUserByNameAndRole(int role, String userName, String passWord) {
-        User user= userMapper.getUserByName(role, userName);
+        User user= userMapper.getUserByNameAndRole(role, userName);
 
         if(user!=null){
             if(passWord.equals(user.getPassWord())){
@@ -28,6 +33,11 @@ public class UserServiceImpl implements UserService {
         }
 
         return null;
+    }
+
+    @Override
+    public int udateUserPwdByPhone(String phone,String passWord) {
+        return userMapper.udateUserPwdByPhone(phone,passWord);
     }
 
 }

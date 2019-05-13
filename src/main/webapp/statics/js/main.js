@@ -74,7 +74,6 @@ function addHouse(){
         alert("您当前的账户为普通用户，请升级为房主用户再进行新房源发布！");
     }else {
        window.location.href="/add.html?userId=$(\"#userId\").text().trim()";
-       //  window.open('/add.html?userId=$("#userId").text().trim()');
 
     }
 

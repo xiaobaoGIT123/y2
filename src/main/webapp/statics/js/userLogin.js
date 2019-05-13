@@ -12,6 +12,9 @@ $(function () {
         }
             return true;
     })
-
+    //用户名获得焦点
+    $("input[name='userName']").focus(function () {
+        $(".error").html("");
+    })
 
 })

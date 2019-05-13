@@ -1,4 +1,6 @@
 package cn.bdqn.controller;
+import com.alibaba.fastjson.JSONObject;
+import com.zhenzi.sms.ZhenziSmsClient;
 import org.apache.log4j.Logger;
 import cn.bdqn.coots.Conts;
 import cn.bdqn.pojo.House;
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Random;
 
 @Controller
 public class UserController {
@@ -61,6 +64,22 @@ public class UserController {
         return "userLogin";
     }
 
+    //进入找回密码的界面
+    @RequestMapping("/findPwd.html")
+    public String findPwd(){
+
+        return "findPwd";
+    }
+
+    //进入其他登录方式的界面
+    @RequestMapping("/qitalogin.html")
+    public String qitalogin(){
+
+        return "qiatlogin";
+    }
+
+
+
 
     /**
      * 登录验证
@@ -78,7 +97,6 @@ public class UserController {
 
 
         User user= userService.getUserByNameAndRole(role , userName, passWord);
-        logger.info("返回条数------------"+user+"--------------<");
         if (user == null) {
             session.setAttribute("error", "用户名或密码不符...");
             return "userLogin";
@@ -88,18 +106,86 @@ public class UserController {
             return "main";
     }
 
-
-
-
-    //退出
+    //退出的方法
     @RequestMapping("/loginOut.html")
-//    @ResponseBody
     public Object loginOut(HttpSession session){
-//        boolean isgod=false;
         session.removeAttribute(Conts.USER_SESSION);
         if(session.getAttribute(Conts.USER_SESSION)==null){
             return "redirect:/login.html";
         }
-            return "redirect:/doLogin.html";
+        return "redirect:/doLogin.html";
     }
+
+
+    //找回密码之查询是否存在此用户
+    @RequestMapping(value = "/changUser.html",method = RequestMethod.POST)
+    @ResponseBody
+    public Object changUser(String userName,String phone){
+        User users=userService.getUserByUsrName(userName);
+
+        int answer=0;
+        if(users!=null){
+            answer=1;
+            if(users.getPhone().equals(phone)){
+                answer=2;
+            }
+        }
+        return JSON.toJSONString(answer);
+
+    }
+    //发送验证码
+    @RequestMapping(value = "/faSong.html",method = RequestMethod.POST)
+    @ResponseBody
+    public Object faSong(String phone){
+
+
+        //生成6位验证码
+        String verifyCode = String.valueOf(new Random().nextInt(899999) + 100000);
+
+//        try {
+//
+//        //发送验证码
+//        ZhenziSmsClient client = new ZhenziSmsClient("https://sms_developer.zhenzikj.com", "101511", "ffc818a3-7913-45de-a6d7-18e8ab4d61cb");
+//
+//            JSONObject json = null;
+//
+//            System.out.print("进了控制层>>>"+verifyCode+"电话号码："+phone);
+//
+//            //书写内容
+//            String result = client.send(phone, "代码测试那边给你发了一条验证码：" +
+//                    ""+verifyCode+"若非本人操作请不要理会");
+//
+//            json = JSONObject.parseObject(result);
+//            if(json.getIntValue("code") != 0){//发送短信失败
+//                return JSON.toJSONString("119");
+//            }
+//            System.out.print("发送结果>>>"+result);
+//            int answer=json.getIntValue("code");
+//            return JSON.toJSONString(verifyCode);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+        System.out.print("随机数》》》》》"+verifyCode);
+            return verifyCode;
+    }
+
+
+    //根据手机号码修改密码的方法
+    @RequestMapping("/uopdateByNumber.html")
+    @ResponseBody
+    public String uopdateByNumber(String phone,String passWord){
+        System.out.print("传过来的电话号码>>>>>"+phone);
+        System.out.print("新密码>>>>>"+passWord);
+
+        int answer=userService.udateUserPwdByPhone(phone,passWord);
+        System.out.print("结果>>>>>"+userService.udateUserPwdByPhone(phone,passWord));
+        return JSON.toJSONString(answer);
+
+    }
+
+    //查询用户未读信息的方法
+
+
+
 }

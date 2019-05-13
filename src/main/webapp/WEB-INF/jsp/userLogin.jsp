@@ -22,19 +22,29 @@
 				<ul id="Myul">
 					<li><input type="radio" value="0" name="role" id="0" checked="checked" /><label for="0">用户登录</label></li>
 					<li><input type="radio" value="1" name="role" id="1"/><label for="1">房主登录</label></li>
-					<li><input type="radio" value="2" name="role" id="2"/><label for="2">后台登录</label></li>
 				</ul>
 				<input type="text" placeholder="用户名" id="entry_name" class="wenben" name="userName">
 				<input type="password" placeholder="密码" id="entry_password" class="wenben" name="passWord">
 				<ul id="Mya">
-					<li><a href="#">其他登录方式</a></li>
+					<li><a href="/qitalogin.html">其他登录方式</a></li>
 					<li><a href="#">前往注册</a></li>
-					<li><a href="#">忘记密码</a></li>
+					<li><a href="/findPwd.html">找回密码</a></li>
 				</ul>
-				<p align="center">${error}</p>
+				<div align="center" style="color: red;font-size: 20px;margin-bottom: 10px" class="error">${error}</div>
 				<button type="submit" id="entry_btn" >登录</button>
 				<div id="prompt" class="prompt"></div>
 			</form>
+
+			<%--<div id="qita">--%>
+
+					<%--<p>手机号码:<input type="text" name="phone"/></p>--%>
+					<%--<p>--%>
+						<%--验证码:<input type="number" name="yanzhengma"/>--%>
+						<%--<input type="button" name="yanzhengbtn" value="获取验证码"/>--%>
+					<%--</p>--%>
+					<%--<p><input type="button" name="getyanzhengma" value="登录"/></p>--%>
+
+			<%--</div>--%>
 		</div>
 	</div>
 </div>

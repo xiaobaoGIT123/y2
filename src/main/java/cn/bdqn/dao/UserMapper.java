@@ -23,4 +23,7 @@ public interface UserMapper {
 
     //(修改举报次数+1,子查询)
     int updateReportCountById(int id);
+
+    //根据手机号码修改用户密码
+    int udateUserPwdByPhone(@Param("phone") String phone,@Param("passWord") String passWord);
 }

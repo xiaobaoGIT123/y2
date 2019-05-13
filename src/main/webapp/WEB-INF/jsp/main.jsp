@@ -33,7 +33,10 @@
 								<c:if test="${userSession.headPicture!=null}">
 									<img src="/statics/img/l_img/head_1.png"/>
 								</c:if>
-								<span>${userSession.userName}</span>
+								<span>
+									<a href="#" style="text-decoration: none;color: white;">${userSession.userName}</a>
+									<img src="/statics/img/l_img/tongzhi.png" style="width: 20px;height: 20px;"/>
+								</span>
 							</p>
 						</div>
 
@@ -61,7 +64,7 @@
 						<ul id="p1">
 						<c:forEach items="${playerList}" var="li">
 							<li>
-								<a href="">${li.houseTitle}</a>
+								<a href="">${li.houseAddress}</a>
 							</li>
 						</c:forEach>
 						</ul>
@@ -115,7 +118,7 @@
 					<!--房源展示框-->
 					<div id="lookhome">
 						<!--房源详细信息-->
-                        <div id="selectdiv">
+                        <div id="selectdiv" class="scrollbar">
                             <h3 align="center">${number}</h3>
 						<c:forEach items="${houseList}" var="li">
 						<div class="showhome">
@@ -125,16 +128,17 @@
 							<c:if test="${li.housePicture!=''}">
 								<img src="/statics/uploadfiles/${li.housePicture}" title="房源图片"/>
 							</c:if>
-							<table >
+							<table>
 								<tr>
 									<td>发布时间：${li.houseTime}&nbsp;&nbsp;&nbsp;</td>
 									<td>房源类型：${li.type}&nbsp;&nbsp;&nbsp;</td>
 									<td>房源价格：${li.housePrice}</td>
 								</tr>
 								<tr>
-									<td colspan="2">房源地址：${li.houseAddress}&nbsp;&nbsp;&nbsp;</td>
+									<td colspan="2">房源地址：${li.houseAddress}</td>
 									<td><a href="#">房源详细信息</a></td>
 								</tr>
+
 							</table>
 						</div>
 						</c:forEach>

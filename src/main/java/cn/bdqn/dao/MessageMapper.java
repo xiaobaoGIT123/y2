@@ -17,4 +17,5 @@ public interface MessageMapper {
 
     //(根据接收者id和发送者id查询聊天记录)
     List<Message> getMessage(int sendId, int receiveId);
+
 }
